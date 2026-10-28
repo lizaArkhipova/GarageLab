@@ -1,4 +1,7 @@
 #include "Garage.h"
+#include <stdexcept>
+
+using namespace std;
 
 Garage::Garage() : vehicles(nullptr), count(0), capacity(0) {
     cout << "[Garage] Default constructor." << endl;
@@ -74,7 +77,6 @@ void Garage::addVehicle(Vehicle* v) {
     count++;
     cout << "Vehicle added." << endl;
 }
-
 void Garage::removeVehicle(int index) {
     if (index < 0 || index >= count)
         throw out_of_range("Index out of range");
@@ -110,7 +112,18 @@ void Garage::editVehicle(int index) {
     vehicles[index]->input();
 }
 
-int Garage::getCount() const { return count; }
+void Garage::clear() {
+    for (int i = 0; i < count; i++) {
+        delete vehicles[i];
+        vehicles[i] = nullptr;
+    }
+    count = 0;
+    cout << "Garage cleared." << endl;
+}
+
+int Garage::getCount() const {
+    return count;
+}
 
 void Garage::saveToFile(const string& filename) const {
     ofstream out(filename);

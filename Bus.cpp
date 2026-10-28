@@ -40,7 +40,7 @@ void Bus::setTotalPlaces(int t) { totalPlaces = t; }
 void Bus::setFinalDestination(const string& d) { finalDestination = d; }
 
 void Bus::display() const {
-    cout << "=== Bus ===" << endl;
+    cout << "   Bus   " << endl;
     cout << "Brand: " << brand << endl;
     cout << "Model: " << model << endl;
     cout << "Seated places: " << seatedPlaces << endl;

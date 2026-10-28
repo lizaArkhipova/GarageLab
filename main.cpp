@@ -1,7 +1,7 @@
 #include "Garage.h"
 
 void showMenu() {
-    cout << "\n========== GARAGE MENU ==========" << endl;
+    cout << "\nGARAGE MENU" << endl;
     cout << "1. Add car" << endl;
     cout << "2. Add motorcycle" << endl;
     cout << "3. Add bus" << endl;
@@ -12,7 +12,7 @@ void showMenu() {
     cout << "8. Save to file" << endl;
     cout << "9. Load from file" << endl;
     cout << "0. Exit" << endl;
-    cout << "===================================" << endl;
+    cout << ".............." << endl;
     cout << "Choice: ";
 }
 

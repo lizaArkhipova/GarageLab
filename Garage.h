@@ -8,11 +8,10 @@
 
 class Garage {
 private:
-    Vehicle** vehicles;
+    Vehicle** vehicles; //указатель на указаль динамическая память
     int count;
     int capacity;
 
-    void resize();
 
 public:
     Garage();
@@ -21,13 +20,15 @@ public:
 
     Garage& operator=(const Garage& other);
 
+    void resize();
     void addVehicle(Vehicle* v);
     void removeVehicle(int index);
     void displayAll() const;
     void displayVehicle(int index) const;
     void editVehicle(int index);
-    int getCount() const;
+    void clear();
 
+    int getCount() const;
     void saveToFile(const string& filename) const;
     void loadFromFile(const string& filename);
 };

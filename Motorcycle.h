@@ -3,20 +3,20 @@
 
 #include "Vehicle.h"
 
-class Motorcycle : public Vehicle {
-private:
+class Motorcycle : public Vehicle { //наследование публич
+private: //уникальные поля мотоцикла
     double engineVolume;
     double enginePower;
     string terrainType;
 
 public:
-    Motorcycle();
-    Motorcycle(const string& brand, const string& model, double engineVolume,
+    Motorcycle(); //без параметров
+    Motorcycle(const string& brand, const string& model, double engineVolume,//с параметрами
         double enginePower, const string& terrainType);
-    Motorcycle(const Motorcycle& other);
-    ~Motorcycle() override;
+    Motorcycle(const Motorcycle& other);//копирование
+    ~Motorcycle() override; //деструтор 
 
-    Motorcycle& operator=(const Motorcycle& other);
+    Motorcycle& operator=(const Motorcycle& other);//оператор присваивания
 
     double getEngineVolume() const;
     double getEnginePower() const;

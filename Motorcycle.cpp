@@ -20,7 +20,7 @@ Motorcycle::Motorcycle(const Motorcycle& other)
 Motorcycle::~Motorcycle() {
     cout << "[Motorcycle] Destructor: " << brand << " " << model << endl;
 }
-
+//оператор присваивания
 Motorcycle& Motorcycle::operator=(const Motorcycle& other) {
     if (this != &other) {
         Vehicle::operator=(other);
@@ -31,7 +31,7 @@ Motorcycle& Motorcycle::operator=(const Motorcycle& other) {
     }
     return *this;
 }
-
+//гет и сет методы
 double Motorcycle::getEngineVolume() const { return engineVolume; }
 double Motorcycle::getEnginePower() const { return enginePower; }
 string Motorcycle::getTerrainType() const { return terrainType; }
@@ -40,7 +40,7 @@ void Motorcycle::setEnginePower(double p) { enginePower = p; }
 void Motorcycle::setTerrainType(const string& t) { terrainType = t; }
 
 void Motorcycle::display() const {
-    cout << "=== Motorcycle ===" << endl;
+    cout << "    Motorcycle   " << endl;
     cout << "Brand: " << brand << endl;
     cout << "Model: " << model << endl;
     cout << "Engine volume: " << engineVolume << " cc" << endl;

@@ -1,4 +1,4 @@
-#ifndef VEHICLE_H
+#ifndef VEHICLE_H  //защита от повторного подключения 
 #define VEHICLE_H
 
 #include <iostream>
@@ -7,17 +7,17 @@
 using namespace std;
 
 class Vehicle {
-protected:
+protected: //доступ внутри класса и в классах наследников
     string brand;
     string model;
 
 public:
-    Vehicle();
-    Vehicle(const string& brand, const string& model);
-    Vehicle(const Vehicle& other);
-    virtual ~Vehicle();
+    Vehicle();  //создает объект без параметров
+    Vehicle(const string& brand, const string& model); //с параметрами
+    Vehicle(const Vehicle& other); //копирует 
+    virtual ~Vehicle();  //виртуальный деструктор 
 
-    Vehicle& operator=(const Vehicle& other);
+    Vehicle& operator=(const Vehicle& other);  //перегрузка оператора =. позволяет делать присваивание объектов V1=V2
 
     string getBrand() const;
     string getModel() const;
